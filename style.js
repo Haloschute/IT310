@@ -57,9 +57,13 @@ addTaskButton.addEventListener("click", () => {
 
 taskList.addEventListener("click", (event) => {
     if (event.target.classList.contains("mark-done")) {
-        event.target.textContent = "Done";
-        event.target.disabled = true; 
-        event.target.style.backgroundColor = "#6c757d"; 
+        if (event.target.textContent === "Mark Done") {
+            event.target.textContent = "Done";
+            event.target.style.backgroundColor = "#6c757d";
+        } else {
+            event.target.textContent = "Mark Done";
+            event.target.style.backgroundColor = "#28a745";
+        }
     }
 });
 
